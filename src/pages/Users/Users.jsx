@@ -10,6 +10,7 @@ const Users = () => {
 
   useEffect(() => {
     setIsLoading(true);
+    
 
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
