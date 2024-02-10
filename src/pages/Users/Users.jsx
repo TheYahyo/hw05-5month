@@ -7,9 +7,7 @@ import fetchAllUsers from "../../store/Reducers/UserReducer";
 
 
 const Users = () => {
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setIsError] = useState("");
-  // const [users, setUsers] = useState([]);
+
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -18,29 +16,16 @@ const Users = () => {
   useEffect(() => {
     dispatch(fetchAllUsers());
 
-    // setIsLoading(true);
-
-    // fetch("https://jsonplaceholder.typicode.com/users")
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     setUsers(data);
-    //     setIsError("");
-    //   })
-    //   .catch((err) => {
-    //     setIsError(err.message);
-    //     setUsers([]);
-    //   })
-    //   .finally(() => setIsLoading(false));
+   
   }, []);
   function getshortvalue(value, id) {
     if (value.length > 20) {
-      return (
-        <div>
-          {value.substr(0, 20)}...
-          <Link to={`/users/${id}`}> More...</Link>
-        </div>
-      )
+      // return (
+      //   <div>
+      //     {value.substr(0, 20)}...
+      //     <Link to={`/users${id}`}> More...</Link>
+      //   </div>
+      // )
     }
   }
   return (
@@ -69,4 +54,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Users;   
