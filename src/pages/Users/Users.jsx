@@ -20,12 +20,7 @@ const Users = () => {
   }, []);
   function getshortvalue(value, id) {
     if (value.length > 20) {
-      return (
-        <div>
-          {value.substr(0, 20)}...
-          <Link to={`/users${id}`}> More...</Link>
-        </div>
-      )
+     
     }
   }
   return (
