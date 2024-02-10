@@ -2,28 +2,36 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./style.module.css";
 import { Link } from "react-router-dom";
+import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import fetchAllUsers from "../../store/Reducers/UserReducer";
+
+
 const Users = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setIsError] = useState("");
-  const [users, setUsers] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setIsError] = useState("");
+  // const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsLoading(true);
-    
+  const dispatch = useDispatch();
+  const { users, isLoading, errorUser } = useSelector((state) => state.users)
 
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setUsers(data);
-        setIsError("");
-      })
-      .catch((err) => {
-        setIsError(err.message);
-        setUsers([]);
-      })
-      .finally(() => setIsLoading(false));
+  useEffect(() => {
+    dispatch(fetchAllUsers());
+
+    // setIsLoading(true);
+
+    // fetch("https://jsonplaceholder.typicode.com/users")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     setUsers(data);
+    //     setIsError("");
+    //   })
+    //   .catch((err) => {
+    //     setIsError(err.message);
+    //     setUsers([]);
+    //   })
+    //   .finally(() => setIsLoading(false));
   }, []);
   function getshortvalue(value, id) {
     if (value.length > 20) {
@@ -56,7 +64,7 @@ const Users = () => {
           </div>
         ))}
       {isLoading && "loading..."}
-      {error && error}
+      {errorUser && errorUser}
     </div>
   );
 };

@@ -7,12 +7,12 @@
   
   .container{
     align-items: center;
-    margin-left: 10%;
-    margin-top: 100px;
-    width: 80%;
-    height: 70vh;
+    margin-left: 2%;
+    margin-top: 50px;
+    width: 96%;
+    height: 90vh;
     justify-content: center;
-    background-color: gray;
+    background-color: rgb(234, 146, 15);
     padding: 23px;
     overflow: auto;
   }
@@ -21,9 +21,9 @@
   .mod{
     padding: 20px;
     width: 80%;
-    border: 1px solid purple;
+    border: 1px solid rgb(0, 0, 0);
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
   
   .flexing{
@@ -35,4 +35,5 @@
     margin-right: 20px;
     width: 100px;
     height: 20px;
+    text-align: center;
   }

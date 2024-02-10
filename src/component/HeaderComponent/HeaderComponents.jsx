@@ -7,20 +7,20 @@ const HeaderComponents = () => {
   const navigate = useNavigate();
   console.log(location);
 
-//   const onBack = () => navigate(location.state?.from, { state: { from: location.pathname} });
+  // const onBack = () => navigate(location.state?.from, { state: { from: location.pathname} });
   const onBack = () => navigate(-1);
 
   return (
     <nav>
       <ul className={classes.navbar}>
         <li>
-          <Link state={{ from: location.pathname }} to="/">Main</Link>
+          <Link className="link1" state={{ from: location.pathname }} to="/">Main</Link>
         </li>
         <li>
-          <Link state={{ from: location.pathname }} to="/posts">Posts</Link>
+          <Link className="link2" state={{ from: location.pathname }} to="/posts">Posts</Link>
         </li>
         <li>
-          <Link state={{ from: location.pathname }} to="/users">Users</Link>
+          <Link className="link3" state={{ from: location.pathname }} to="/users">Users</Link>
         </li>
       </ul>
 
